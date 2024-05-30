@@ -1,5 +1,9 @@
 import React, { useContext } from 'react'
 import landingPageImg from "../assets/images/12085316_20944142.svg"
+import img1 from "../assets/images/18771503_6029655.jpg"
+import img2 from "../assets/images/4167276_18771.jpg"
+import img3 from "../assets/images/4951570_19963.jpg"
+
 import Button from '@mui/material/Button';
 import { Link, Navigate, Outlet, useNavigate } from 'react-router-dom';
 import { myContext } from '../MyContext';
@@ -12,7 +16,7 @@ const LandingPage = () => {
     <div>
       {/* <Navbar></Navbar> */}
       <main className='flex h-[90vh]' id='landingMain'>
-        <section className='w-[59%] h-[100%] bg-[#ffffff] flex justify-center items-center' id='landingImg'><img src={landingPageImg} alt="" /></section>
+        <section className='w-[59%] h-[100%] bg-[#ffffff] flex justify-center items-center' id='landingImg'><img src={img1} alt="" /></section>
         <section className='w-[41%] h-[90%] p-10 bg-[#ffffff] flex flex-col justify-around items-center' id='landingSection' >
           <h1 className='font-semibold text-5xl' id='landingH1'>We give a sleek resume design for every industry</h1>
           <p className='font-medium text-lg ' id='landingPara'>Whether you're applying for a role as a creative director, accountant or your first internship, We are providing Free Resume Maker that takes the heavy lifting out of resume design</p>

@@ -55,8 +55,8 @@ const HomeRight = (props, ref) => {
               <thead className='bg-blue-200'>
                 <tr>
                   <th className='w-[6vw]  align-text-top  h-[3vh]'></th>
-                  <th className='w-[3vw]  align-text-top h-[3vh]'>%</th>
-                  <th className='w-[2vw]  align-text-top h-[3vh]'>yop</th>
+                  <th className='w-[2vw]  align-text-top h-[3vh]'>%</th>
+                  <th className='w-[3vw]  align-text-top h-[3vh]'>year of passout</th>
                   <th className='w-[9vw]  align-text-top h-[3vh]'>Board</th>
                   <th className='w-[6vw]  align-text-top h-[3vh]'>Stream</th>
                 </tr>

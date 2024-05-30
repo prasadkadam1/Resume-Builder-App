@@ -60,14 +60,14 @@ const HomeLeft = (props, ref) => {
       }
     }
   };
-  const handleKeyPressPg = (event) => {
-    if (event.key === 'Backspace' && state.pgPercentage.length === 2) {
-      setState(prevState => ({
-        ...prevState,
-        pgPercentage: ''
-      }));
-    }
-  };
+  // const handleKeyPressPg = (event) => {
+  //   if (event.key === 'Backspace' && state.pgPercentage.length === 2) {
+  //     setState(prevState => ({
+  //       ...prevState,
+  //       pgPercentage: ''
+  //     }));
+  //   }
+  // };
 
 
   const handleKeyPressGrad = (event) => {
@@ -170,9 +170,9 @@ const HomeLeft = (props, ref) => {
     navigate("/")
     setIsLoggedIn(!isLoggedIn)
   }
-  const downloadPDF = (e) => {
+  const downloadPDF = async (e) => {
     e.preventDefault()
-    console.log("hello");
+
     html2canvas(ref.current, { scale: 2 }).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({ imageCompression: false });
@@ -182,6 +182,32 @@ const HomeLeft = (props, ref) => {
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
       pdf.save('resume.pdf');
     });
+
+
+    let resp = await fetch(`http://localhost:5000/addUser`, {
+      method: "POST",
+      body: JSON.stringify(state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    const result = await resp.json()
+    if (resp.ok) {
+      console.log(result)
+    }
+    if (!resp.ok) {
+      console.log(resp.error)
+    }
+    // setState({
+    //   name: "",
+    //   email: "",
+    //   age: "",
+    //   password: ""
+    // })
+    // navigate("/read")
+
+
   };
   return (
     <div className='w-[65%] h-[100%]  p-5 overflow-y-auto border-r-2' id='homeLeftDiv'>
